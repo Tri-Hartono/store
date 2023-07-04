@@ -1,0 +1,33 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  h1 {
+    @apply text-2xl md:text-4xl lg:text-6xl;
+  }
+  h2 {
+    @apply text-xl md:text-2xl lg:text-3xl;
+  }
+  h3 {
+    @apply text-lg md:text-xl;
+  }
+  p {
+    @apply text-sm md:text-base;
+  }
+  button {
+    @apply px-4 py-2 rounded-md border border-slate-200 hover:bg-slate-800 hover:text-white;
+  }
+  label {
+    @apply block mb-2 text-sm font-medium;
+  }
+  input {
+    @apply w-full px-4 py-2 rounded-md border border-slate-200;
+  }
+}
+
+@layer components {
+  .px-setting {
+    @apply px-5 md:px-10 lg:px-20 xl:px-32;
+  }
+}
