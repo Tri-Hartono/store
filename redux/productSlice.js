@@ -1,6 +1,12 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
 
+export const fetchProducts = createAsyncThunk('products/fetch', async () => {
+  const res = await axios.get('https://fakestoreapi.com/products');
+  const data = await res.data;
+  return data;
+});
+
 export const STATUSES = Object.freeze({
   IDLE: 'idle',
   ERROR: 'error',
@@ -31,9 +37,3 @@ const productSlice = createSlice({
 
 export const { setProducts, setStatus } = productSlice.actions;
 export default productSlice.reducer;
-
-export const fetchProducts = createAsyncThunk('products/fetch', async () => {
-  const res = await axios.get('https://fakestoreapi.com/products');
-  const data = await res.data;
-  return data;
-});

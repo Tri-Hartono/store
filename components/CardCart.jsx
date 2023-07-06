@@ -35,7 +35,7 @@ export default function CardCart(product) {
       </div>
       <div>
         <h3>price</h3>
-        <p className="font-bold">${countProduct}</p>
+        <p className="font-bold">${countProduct?.toFixed(2)}</p>
       </div>
       <div className="flex gap-4 items-center">
         <div className="flex justify-center items-center gap-2">

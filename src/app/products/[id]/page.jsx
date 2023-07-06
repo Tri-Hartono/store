@@ -1,15 +1,15 @@
 import Image from 'next/image';
 import { AiFillStar } from 'react-icons/ai';
-import Rekomendasi from '../../../../components/Rekomendasi';
 import axios from 'axios';
+import Rekomendasi from '../../../../components/Rekomendasi';
 
 const getDetailProducts = async (params) => {
   const res = await axios.get(`https://fakestoreapi.com/products/${params}`);
   return res.data;
 };
-
 export default async function DetailProducts({ params }) {
   const DataProduct = await getDetailProducts(params.id);
+
   return (
     <div>
       <div className="flex flex-col md:flex-row justify-between py-10 md:py-20 w-full h-full">
