@@ -8,6 +8,8 @@ export default function Products() {
   const { data: products, status } = useSelector((state) => state.products);
   const [categories, setCategories] = useState([]);
   const [selectedCategory, setSelectedCategory] = useState('');
+  const [searchInput, setSearchInput] = useState('');
+  const [searchResult, setSearchResult] = useState([]);
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -21,8 +23,25 @@ export default function Products() {
 
   const handleCategorySelect = (category) => {
     setSelectedCategory(category);
+    setSearchResult([]);
+  };
+  const handleSearchInputChange = (event) => {
+    setSearchInput(event.target.value);
   };
 
+  const handleSearch = () => {
+    const searchQuery = searchInput.trim().toLowerCase();
+
+    if (searchQuery) {
+      const filteredProducts = selectedCategory ? products.filter((product) => product.category === selectedCategory) : products;
+
+      const filteredAndSearchedProducts = filteredProducts.filter((product) => product.title.toLowerCase().includes(searchQuery));
+
+      setSearchResult(filteredAndSearchedProducts);
+    } else {
+      setSearchResult([]);
+    }
+  };
   const filteredProducts = selectedCategory ? products.filter((product) => product.category === selectedCategory) : products;
   return (
     <div className="w-auto flex flex-col justify-between gap-20  md:flex-row relative">
@@ -43,8 +62,8 @@ export default function Products() {
 
       <div className="w-full space-y-4">
         <div className="flex items-center justify-center gap-4">
-          <input type="text" placeholder="search data" />
-          <button>Cari</button>
+          <input type="text" placeholder="search data" value={searchInput} onChange={handleSearchInputChange} />
+          <button onClick={handleSearch}>Cari</button>
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -52,7 +71,7 @@ export default function Products() {
             <p>Loading data...</p>
           ) : (
             <>
-              {filteredProducts.map((product) => (
+              {(searchResult.length > 0 ? searchResult : filteredProducts).map((product) => (
                 <CardProducts key={product.id} {...product} />
               ))}
             </>

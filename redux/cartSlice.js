@@ -7,20 +7,11 @@ const cartSlice = createSlice({
     add(state, action) {
       const product = action.payload;
 
-      // cek jika product sudah siap digunakan
       const exist = state.find((x) => x.id === product.id);
       if (exist) {
-        //increase the quantity
-        return state.map((x) => (x.id === product.id ? { ...x, qty: x.qty + 1 } : x));
+        return state.map((x) => (x.id === product.id ? { ...product } : x)); // Perbarui produk yang memiliki id yang sama
       } else {
-        const product = action.payload;
-        return [
-          ...state,
-          {
-            ...product,
-            qty: 1,
-          },
-        ];
+        return [...state, { ...product }]; // Tambahkan produk baru jika belum ada di state
       }
     },
     remove(state, action) {

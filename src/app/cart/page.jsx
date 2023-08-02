@@ -5,6 +5,11 @@ import Link from 'next/link';
 
 export default function Cart() {
   const products = useSelector((state) => state.cart);
+  const subTotal = products.reduce((total, product) => total + product.price, 0);
+  console.log(products);
+  const shippingTax = 20;
+  const cupponCode = 10;
+  const total = subTotal + shippingTax - cupponCode;
 
   return (
     <div className="flex flex-col lg:flex-row  justify-between gap-4 md:py-10">
@@ -23,19 +28,19 @@ export default function Cart() {
         <h3>Order Summary</h3>
         <div className="flex justify-between">
           <p>Sub total</p>
-          <p className="font-bold">$200</p>
+          <p className="font-bold">${subTotal}</p>
         </div>
         <div className="flex justify-between">
           <p>Shipping tax</p>
-          <p className="font-bold">$200</p>
+          <p className="font-bold">${shippingTax}</p>
         </div>
         <div className="flex justify-between">
           <p>Cuppon Code</p>
-          <p className="font-bold">$200</p>
+          <p className="font-bold">${cupponCode}</p>
         </div>
         <div className="flex justify-between">
           <p className="font-bold">Total</p>
-          <p className="font-bold">$200</p>
+          <p className="font-bold">${total}</p>
         </div>
         <div className="flex justify-between items-center">
           <button>Checkout</button>
