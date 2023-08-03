@@ -35,7 +35,7 @@ export default function Navbar() {
   }, []);
 
   return (
-    <div className={`2xl:w-3/4 3xl:w-1/2 mx-auto fixed  z-30 px-setting flex justify-between items-center w-full py-2 ${color ? 'bg-white/50 text-black' : 'bg-transparent '} `}>
+    <div className={`2xl:w-3/4 3xl:w-1/2 mx-auto fixed top-0  z-30 px-setting flex justify-between items-center w-full py-2 ${color ? 'bg-white/50 text-black' : 'bg-transparent '} `}>
       <Link href={'/'} className="z-20">
         <h2>Storee</h2>
       </Link>
@@ -62,7 +62,7 @@ export default function Navbar() {
           </div>
         </div>
         <Link className="hidden lg:flex" href="/register">
-          <button className="bg-white text-black shadow">Register</button>
+          <button className="bg-white text-black ">Register</button>
         </Link>
       </div>
     </div>

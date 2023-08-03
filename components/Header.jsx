@@ -4,12 +4,12 @@ import Link from 'next/link';
 
 export default function Header() {
   return (
-    <div className="  md:h-screen  flex flex-col  gap-4  ">
+    <div className="mt-16  md:h-screen  flex flex-col  gap-4  ">
       <div className=" w-full  py-32 md:h-4/5 flex items-center justify-center relative bg-blue-300   ">
-        <div className="px-setting absolute inset-0">
+        <div className="px-setting absolute inset-0 mt-6">
           <Image src={bg} width="auto" height="auto" className="  w-full h-full" />
         </div>
-        <div className="relative z-10 space-y-4 font-bold text-white bg-white/20 md:bg-transparent shadow md:shadow-none p-4 rounded-md  text-center  ">
+        <div className="relative z-10 space-y-4 font-bold text-white bg-white/20 shadow md:shadow-none p-4 rounded-md  text-center  ">
           <h1 className="">
             <span className="text-yellow-300 ">NEW</span> SEASON
           </h1>
