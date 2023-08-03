@@ -5,7 +5,9 @@ export default function Home() {
   return (
     <>
       <Header />
-      <Rekomendasi />
+      <div className="px-setting">
+        <Rekomendasi />
+      </div>
     </>
   );
 }

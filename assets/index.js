@@ -1,4 +1,4 @@
-import bg from './images/bg.jpg';
+import bg from './images/bg.png';
 import women1 from './images/women1.png';
 import women2 from './images/women2.png';
 import women3 from './images/women3.png';

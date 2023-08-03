@@ -14,10 +14,10 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={`${inter.className}`}>
+      <body className={`${inter.className} 2xl:w-3/4 3xl:w-1/2 mx-auto`}>
         <Providers>
           <Navbar />
-          <div className="px-setting pt-16 pb-10">{children}</div>
+          <div className="">{children}</div>
         </Providers>
         <Footer />
       </body>

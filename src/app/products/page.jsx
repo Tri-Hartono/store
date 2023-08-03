@@ -44,7 +44,7 @@ export default function Products() {
   };
   const filteredProducts = selectedCategory ? products.filter((product) => product.category === selectedCategory) : products;
   return (
-    <div className="w-auto flex flex-col justify-between gap-20  md:flex-row relative">
+    <div className="w-auto px-setting pt-20  flex flex-col justify-between gap-20  md:flex-row relative">
       <div className="grid grid-cols-2 md:grid-cols-1 gap-4 h-fit  ">
         <button onClick={() => handleCategorySelect('')}>All Categories</button>
         {status === STATUSES.LOADING ? (
