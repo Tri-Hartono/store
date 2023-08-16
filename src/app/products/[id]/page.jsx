@@ -35,10 +35,10 @@ export default function DetailProducts({ params }) {
   }
 
   return (
-    <div>
-      <div className="flex flex-col md:flex-row justify-between py-10 md:py-20 w-full h-full">
-        <div className="w-full h-60 mb-10 md:w-1/2 relative  ">
-          <Image src={dataProduct.image} objectFit="contain" layout="fill" alt={dataProduct.title} />
+    <div className="px-setting">
+      <div className="flex flex-col md:flex-row justify-between py-14 md:py-20 lg:py-24 w-full h-full gap-10 md:gap-20">
+        <div className="w-[60%] h-[30vh] m-auto md:h-auto md:w-1/2 relative">
+          <Image src={dataProduct.image} objctFit="contain" layout="fill" alt={dataProduct.title} />
         </div>
         <div className="md:w-1/2 space-y-6">
           <h2>{dataProduct.title}</h2>

@@ -39,7 +39,7 @@ export default function Navbar() {
       <Link href={'/'} className="z-20">
         <h2>Storee</h2>
       </Link>
-      <div className={`inset-0 lg:relative flex flex-col lg:flex-row  gap-4 w-full z-10 ${active ? 'fixed lg:relative bg-blue-300' : 'hidden lg:flex'}`}>
+      <div className={`inset-0 lg:relative flex flex-col lg:flex-row  gap-4 w-full z-10 ${active ? 'fixed lg:relative bg-white/80' : 'hidden lg:flex'}`}>
         <div className="flex flex-col lg:flex-row items-center justify-center gap-4 w-full h-1/2 ">
           {NavItems.map((item, index) => (
             <Link href={item.url} className="" key={index}>
