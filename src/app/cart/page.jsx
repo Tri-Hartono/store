@@ -12,7 +12,7 @@ export default function Cart() {
   const total = subTotal + shippingTax - cupponCode;
 
   return (
-    <div className="flex flex-col lg:flex-row  justify-between gap-4 md:py-10">
+    <div className="flex flex-col lg:flex-row  justify-between gap-4 md:py-10 px-setting">
       <div className="w-full ">
         {products.length === 0 ? (
           <p>Your cart is Emty</p>
